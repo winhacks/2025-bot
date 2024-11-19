@@ -1,0 +1,73 @@
+{
+    // production client information
+    production: {
+        app_id: "",
+        api_token: "",
+        bot_uid: 8,
+        guild: "",
+    },
+
+    // development client information
+    development: {
+        app_id: "",
+        api_token: "",
+        bot_uid: 8,
+        guild: "",
+    },
+
+    // should the bot be in development mode?
+    dev_mode: false,
+
+    // sheets API config
+    sheets_api: {
+        scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
+        private_key: "",
+        client_email: "",
+    },
+
+    // information for the /about command, and `color` dictates the bot embed color
+    bot_info: {
+        name: "",
+        color: 0x14c3a2, // a hex literal of the form 0xRRGGBB
+        event_name: "WinHacks 2024",
+        title_url: "",
+        thumbnail: "",
+        description: "An open-source Discord Bot written in TypeScript with Discord.JS by [Borhan Saflo](https://borhansaflo.com) and [Isaac Kilbourne](https://isaac.kilbourne.ca) and published under the MIT license for WinHacks 2024.",
+    },
+
+    // config for the /verify and /unverify commands
+    verify: {
+        registration_url: "",
+        target_sheet_id: "",
+        target_sheet: "",
+        first_name_column: "A",
+        last_name_column: "B",
+        email_column: "C",
+        verified_role_name: "Verified",
+        channel_id: "1234567890",
+    },
+
+    // /team and subcommand config
+    teams: {
+        max_name_length: 20,
+        max_team_size: 4,
+        teams_per_category: 25, // each team creates 2 channels. Should be at MOST floor(DISCORD_CATEGORY_CHANNEL_LIMIT / 2)
+        category_base_name: "Teams",
+        moderator_roles: ["Moderator"],
+    },
+
+    // displayName is the text that will be shown in the socials embed, link is the link it will point to
+    // The stream command searches for a link named "twitch", "twitchtv", or "twitch.tv" (not case sensitive)
+    // so that is the name you should give your twitch link if you have one
+    socials: [
+        {displayName: "Twitter", link: "https://twitter.com/WinHacksCA"},
+        {displayName: "Facebook", link: "https://facebook.com/WinHacksCA"},
+        {displayName: "LinkedIn", link: "https://linkedin.com/company/winhacks"},
+        {displayName: "Instagram", link: "https://instagram.com/winhacksca"},
+        {displayName: "Twitch", link: "https://twitch.tv/uwindsorcss"},
+        {
+            displayName: "YouTube",
+            link: "https://www.youtube.com/channel/UCMph1_SzSomH2cUF7j_YqUA",
+        },
+    ],
+}

@@ -1,0 +1,48 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = "file:../data/database.sqlite"
+}
+
+model Team {
+    stdName        String          @id @unique
+    displayName    String
+    categoryId     String
+    category       DiscordCategory @relation(fields: [categoryId], references: [categoryId])
+    textChannelId  String
+    voiceChannelId String
+    members        Hacker[]
+    invites        Invite[]
+}
+
+model Hacker {
+    discordId String @id @unique
+
+    firstName String
+    lastName  String
+    email     String @unique
+
+    teamStdName String?
+    team        Team?   @relation(fields: [teamStdName], references: [stdName])
+
+    invites Invite[]
+}
+
+model Invite {
+    inviteeId String
+    invitee   Hacker @relation(fields: [inviteeId], references: [discordId])
+
+    teamStdName String
+    Team        Team   @relation(fields: [teamStdName], references: [stdName], onDelete: Cascade)
+
+    @@id([inviteeId, teamStdName])
+    @@unique([inviteeId, teamStdName])
+}
+
+model DiscordCategory {
+    categoryId String @id @unique
+    teams      Team[]
+}

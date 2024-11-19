@@ -1,0 +1,8 @@
+services:
+  winhacksbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - ./data:/app/data:rw
