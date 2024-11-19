@@ -29,10 +29,10 @@
     bot_info: {
         name: "",
         color: 0x14c3a2, // a hex literal of the form 0xRRGGBB
-        event_name: "WinHacks 2024",
+        event_name: "WinHacks 2025",
         title_url: "",
         thumbnail: "",
-        description: "An open-source Discord Bot written in TypeScript with Discord.JS by [Borhan Saflo](https://borhansaflo.com) and [Isaac Kilbourne](https://isaac.kilbourne.ca) and published under the MIT license for WinHacks 2024.",
+        description: "An open-source Discord Bot written in TypeScript with Discord.JS by [Borhan Saflo](https://borhansaflo.com) and [Isaac Kilbourne](https://isaac.kilbourne.ca) and published under the MIT license for WinHacks 2025.",
     },
 
     // config for the /verify and /unverify commands
