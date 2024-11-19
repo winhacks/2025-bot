@@ -82,4 +82,4 @@ The socials item is an array of key-value pairs (`displayName: link`) that tells
 
 Now that you've configured everything, you need to start it up. We use Docker to make that very simple.
 
-For hosting, its as simple as `yarn docker:host`. Similarly, for development, is as simple as `yarn dev`. You can also install `pino-pretty` with `yarn global add pino-pretty` and use `yarn dev-pretty` for nicer looking logs.
+For hosting, its as simple as `pnpm docker:host`. Similarly, for development, is as simple as `pnpm dev`. You can also install `pino-pretty` with `pnpm global add pino-pretty` and use `pnpm dev-pretty` for nicer looking logs.

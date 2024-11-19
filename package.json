@@ -10,14 +10,14 @@
   "scripts": {
     "dev": "ts-node ./src/index.ts",
     "dev-pretty": "ts-node ./src/index.ts | pino-pretty",
-    "build": "yarn prisma:generate && tsc -outdir ./build",
+    "build": "pnpm prisma:generate && tsc -outdir ./build",
     "host": "node ./build/index.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate deploy",
     "prisma:create-migration": "prisma migrate dev",
     "docker:host": "docker compose up -d",
     "docker:stop": "docker compose down",
-    "docker:update": "yarn docker:stop && docker-compose up -d --build"
+    "docker:update": "pnpm docker:stop && docker-compose up -d --build"
   },
   "prettier": {
     "tabWidth": 4,
