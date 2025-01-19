@@ -1,6 +1,5 @@
-import {channelMention, hyperlink, SlashCommandBuilder} from "@discordjs/builders";
+import {SlashCommandBuilder} from "@discordjs/builders";
 import {CacheType, ChatInputCommandInteraction} from "discord.js";
-import {Config} from "../config";
 import {ResponseEmbed, SafeReply} from "../helpers/responses";
 import {CommandType} from "../types";
 
@@ -10,6 +9,7 @@ const applyModule: CommandType = {
         .setDescription("Instructions for how to apply."),
     deferMode: "NO-DEFER",
     execute: async (intr: ChatInputCommandInteraction<CacheType>) => {
+        /*
         const verifyChannelId = Config.verify.channel_id;
 
         let onlineLink = hyperlink("online", Config.verify.registration_url);
@@ -24,6 +24,13 @@ const applyModule: CommandType = {
             .setTitle(":question: How to Apply")
             .setDescription(
                 `Welcome to WinHacks!\n\n${applyInstructions}. Then ${verifyInstructions}.`
+            );
+        */
+
+        const embed = ResponseEmbed()
+            .setTitle(":no_entry: Applications Closed")
+            .setDescription(
+                `Applications are now closed.`
             );
 
         return await SafeReply(intr, {embeds: [embed], ephemeral: true});
