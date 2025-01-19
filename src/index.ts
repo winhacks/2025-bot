@@ -6,6 +6,8 @@ import {logger} from "./logger";
 import {readdir} from "fs/promises";
 import {AuthenticateGoogleAPI} from "./helpers/sheetsAPI";
 import path from "path";
+import dotenv from "dotenv";
+dotenv.config();
 
 let client: ClientType;
 
