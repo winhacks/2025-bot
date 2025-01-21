@@ -93,7 +93,7 @@ const verifyModule: CommandType = {
                     title: "Email Already Used",
                     message: [
                         "It looks like someone is already registered with that email.",
-                        "If this is a mistake, please reach out to a Lead or Admin.",
+                        "If you're sure this is your email, please ping @admin.",
                     ].join(" "),
                 })
             );
@@ -107,8 +107,10 @@ const verifyModule: CommandType = {
                 ErrorMessage({
                     title: "Verification Failed",
                     message: [
-                        "I couldn't verify that email address. If you haven't registered,",
-                        `you can ${hyperlink("register here", registerLink)}.`,
+                        "I couldn't verify that email address.",
+                        "Please make sure you're using the email on",
+                        "which you received the invitation to hack.",
+                        "If there's a mistake, please ping @admin.",
                     ].join(" "),
                 })
             );
@@ -122,8 +124,7 @@ const verifyModule: CommandType = {
                 ErrorMessage({
                     message: [
                         "Discord requires your name be 32 characters or less.",
-                        "Please re-register with a shorter version of your real",
-                        "name and try again.",
+                        "Please ping @admin to resolve this.",
                     ].join(" "),
                 })
             );
