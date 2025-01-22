@@ -117,7 +117,7 @@ const verifyModule: CommandType = {
         }
 
         // HOTFIX: Discord prevents nicknames over 32 characters, lets give a nice error for that
-        const nickname = `${userData.firstName} ${userData.lastName}`;
+        const nickname = `${userData.firstName.trim()} ${userData.lastName.trim()}`;
         if (nickname.length > 32) {
             return await SafeReply(
                 intr,
