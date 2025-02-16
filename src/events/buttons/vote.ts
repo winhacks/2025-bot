@@ -39,19 +39,21 @@ const voteAction: ButtonAction = {
             }));
         }
 
-        // Check if user has already voted
-        if (poll.votes.has(intr.user.id)) {
-            return await SafeReply(intr, ErrorMessage({
-                title: "Already Voted",
-                message: "You have already voted in this poll."
-            }));
-        }
+        const newVoteIndex = parseInt(optionIndex);
+        const oldVote = poll.votes.get(intr.user.id);
 
         // Record vote
-        poll.votes.set(intr.user.id, parseInt(optionIndex));
+        poll.votes.set(intr.user.id, newVoteIndex);
+
+        let message: string;
+        if (oldVote !== undefined) {
+            message = `Your vote has been changed from "${poll.options[oldVote]}" to "${poll.options[newVoteIndex]}"`;
+        } else {
+            message = `Your vote for "${poll.options[newVoteIndex]}" has been recorded`;
+        }
 
         return await SafeReply(intr, SuccessMessage({
-            message: `Your vote for "${poll.options[parseInt(optionIndex)]}" has been recorded.`
+            message
         }));
     },
 };
