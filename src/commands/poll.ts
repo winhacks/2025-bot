@@ -134,6 +134,7 @@ const pollModule: CommandType = {
             content: shouldPing ? "@everyone" : undefined,
             embeds: [embed],
             components: [row],
+            allowedMentions: shouldPing ? { parse: ['everyone'] } : { parse: [] }
         }).then(response => response.fetch());
 
         // Store poll data
